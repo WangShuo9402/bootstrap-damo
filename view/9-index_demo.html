@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>响应式导航</title>
+    <!-- 引入bootstrap.min.css -->
+    <link rel="stylesheet" href="../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css">
+    <style>
+        .zlyImg {
+            width: 50px;
+            height: 50px;
+
+            /* 补充 - css设置border的圆角 */
+            border-radius: 50%;
+
+            padding: 2px;
+        }
+
+        #imgs img:hover{
+            border:1px dashed red;
+        }
+
+        @media all and (max-width: 768px) {
+            #btn_all {
+                margin-top: 10px;
+                /* text-align: center; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航begin -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-inverse" style="margin-bottom:0px" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#example-navbar-collapse">
+                            <span class="sr-only">切换导航</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">学生管理系统</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
+                            <li><a href="#">注册</a></li>
+                            <li><a href="#">安全退出</a></li>
+                            <li><a href="#">在线人数</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    个人中心 <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">修改密码</a></li>
+                                    <li><a href="#">上传头像</a></li>
+                                    <li><a href="#">退出</a></li>
+                                </ul>
+                            </li>
+                            <li><img src="../images/zly.png" class="zlyImg"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- 导航end -->
+
+    <!--模态框begin-->
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">用户登录入口</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" action="">
+
+
+                        <div class="form-group has-feedback">
+                            <label for="firstname" class="col-md-2 control-label">名字</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label for="lastname" class="col-md-2 control-label">姓</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="lastname" placeholder="请输入姓">
+                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">请记住我
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">提交更改</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--模态框end-->
+
+    <!--轮播begin - banner -->
+    <div class="container-fluid">
+        <div class="row">
+            <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="../images/advert1.jpg" alt="First slide">
+                    </div>
+                    <div class="item">
+                        <img src="../images/advert2.jpg" alt="Second slide">
+                    </div>
+                    <div class="item">
+                        <img src="../images/advert3.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev"> <span _ngcontent-c3=""
+                        aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
+        </div>
+    </div>
+    <!--轮播end - banner -->
+
+    <!--操作选项begin-->
+    <div class="container-fluid">
+        <div class="row">
+            <div style="padding: 30px 5px;">
+                <form class="bs-example bs-example-form" role="form">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="请您根据图书名模糊查询">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info" type="button">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-md-3" id="btn_all">
+                            <button class="btn btn-warning" type="button">修改图书</button>
+                            <button class="btn btn-success" type="button">新增图书</button>
+                            <button class="btn btn-danger" type="button">删除图书</button>
+                        </div>
+                    </div><!-- /.row -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--操作选项end-->
+
+    <!--图书相册 begin-->
+    <div class="container-fluid" id="imgs">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <input type="checkbox" name="books">
+                   <img src="../images/beiwei78.jpg"> 
+                   <div class="caption">
+                       <h3 align="center">西游记</h3>
+                       <p align="center">
+                           <p class="text-info" align="center">作者:吴承恩</p>
+                           <p class="text-danger" align="center">价格:100.0</p>
+                           <p class="text-success" align="center">出版社:人民出版社</p>
+                       </p>
+                       <p>
+                           <p class="pull-right">
+                                <a href="#" class="text-danger">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                           </p>
+
+                           <p>
+                                <a href="#" class="text-warning">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                 </a>
+                           </p>
+                       </p>
+                   </div>
+                </div>
+           </div>       
+           <div class="col-md-3">
+                <div class="thumbnail">
+                    <input type="checkbox" name="books">
+                   <img src="../images/beiwei78.jpg"> 
+                   <div class="caption">
+                       <h3 align="center">西游记2</h3>
+                       <p align="center">
+                           <p class="text-info" align="center">作者:吴承恩</p>
+                           <p class="text-danger" align="center">价格:100.0</p>
+                           <p class="text-success" align="center">出版社:人民出版社</p>
+                       </p>
+                       <p>
+                           <p class="pull-right">
+                                <a href="#" class="text-danger">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                           </p>
+
+                           <p>
+                                <a href="#" class="text-warning">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                 </a>
+                           </p>
+                       </p>
+                   </div>
+                </div>
+           </div>    
+           <div class="col-md-3">
+                <div class="thumbnail">
+                    <input type="checkbox" name="books">
+                   <img src="../images/beiwei78.jpg"> 
+                   <div class="caption">
+                       <h3 align="center">西游记2</h3>
+                       <p align="center">
+                           <p class="text-info" align="center">作者:吴承恩</p>
+                           <p class="text-danger" align="center">价格:100.0</p>
+                           <p class="text-success" align="center">出版社:人民出版社</p>
+                       </p>
+                       <p>
+                           <p class="pull-right">
+                                <a href="#" class="text-danger">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                           </p>
+
+                           <p>
+                                <a href="#" class="text-warning">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                 </a>
+                           </p>
+                       </p>
+                   </div>
+                </div>
+           </div>       
+           <div class="col-md-3">
+                <div class="thumbnail">
+                    <input type="checkbox" name="books">
+                   <img src="../images/beiwei78.jpg"> 
+                   <div class="caption">
+                       <h3 align="center">西游记2</h3>
+                       <p align="center">
+                           <p class="text-info" align="center">作者:吴承恩</p>
+                           <p class="text-danger" align="center">价格:100.0</p>
+                           <p class="text-success" align="center">出版社:人民出版社</p>
+                       </p>
+                       <p>
+                           <p class="pull-right">
+                                <a href="#" class="text-danger">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                           </p>
+
+                           <p>
+                                <a href="#" class="text-warning">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                 </a>
+                           </p>
+                       </p>
+                   </div>
+                </div>
+           </div>       
+           <div class="col-md-3">
+                <div class="thumbnail">
+                    <input type="checkbox" name="books">
+                   <img src="../images/beiwei78.jpg"> 
+                   <div class="caption">
+                       <h3 align="center">西游记2</h3>
+                       <p align="center">
+                           <p class="text-info" align="center">作者:吴承恩</p>
+                           <p class="text-danger" align="center">价格:100.0</p>
+                           <p class="text-success" align="center">出版社:人民出版社</p>
+                       </p>
+                       <p>
+                           <p class="pull-right">
+                                <a href="#" class="text-danger">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                           </p>
+
+                           <p>
+                                <a href="#" class="text-warning">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                 </a>
+                           </p>
+                       </p>
+                   </div>
+                </div>
+           </div>       
+           <div class="col-md-3">
+                <div class="thumbnail">
+                    <input type="checkbox" name="books">
+                   <img src="../images/beiwei78.jpg"> 
+                   <div class="caption">
+                       <h3 align="center">西游记2</h3>
+                       <p align="center">
+                           <p class="text-info" align="center">作者:吴承恩</p>
+                           <p class="text-danger" align="center">价格:100.0</p>
+                           <p class="text-success" align="center">出版社:人民出版社</p>
+                       </p>
+                       <p>
+                           <p class="pull-right">
+                                <a href="#" class="text-danger">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                           </p>
+
+                           <p>
+                                <a href="#" class="text-warning">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                 </a>
+                           </p>
+                       </p>
+                   </div>
+                </div>
+           </div>       
+           <div class="col-md-3">
+                <div class="thumbnail">
+                    <input type="checkbox" name="books">
+                   <img src="../images/beiwei78.jpg"> 
+                   <div class="caption">
+                       <h3 align="center">西游记2</h3>
+                       <p align="center">
+                           <p class="text-info" align="center">作者:吴承恩</p>
+                           <p class="text-danger" align="center">价格:100.0</p>
+                           <p class="text-success" align="center">出版社:人民出版社</p>
+                       </p>
+                       <p>
+                           <p class="pull-right">
+                                <a href="#" class="text-danger">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                           </p>
+
+                           <p>
+                                <a href="#" class="text-warning">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                 </a>
+                           </p>
+                       </p>
+                   </div>
+                </div>
+           </div>       
+           <div class="col-md-3">
+                <div class="thumbnail">
+                    <input type="checkbox" name="books">
+                   <img src="../images/beiwei78.jpg"> 
+                   <div class="caption">
+                       <h3 align="center">西游记2</h3>
+                       <p align="center">
+                           <p class="text-info" align="center">作者:吴承恩</p>
+                           <p class="text-danger" align="center">价格:100.0</p>
+                           <p class="text-success" align="center">出版社:人民出版社</p>
+                       </p>
+                       <p>
+                           <p class="pull-right">
+                                <a href="#" class="text-danger">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                           </p>
+
+                           <p>
+                                <a href="#" class="text-warning">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                 </a>
+                           </p>
+                       </p>
+                   </div>
+                </div>
+           </div>          
+        </div>
+    </div>
+
+    <!--图书相册end-->
+
+    <div class="container" style="text-align: center">
+        <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li class="disabled"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+    </div>
+
+
+    <!-- 一定要先引入jquery.min.js - bootstrap中的很多的js插件都是依赖于jquery
+    jquery本身就是js的框架 -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+
+    <script src="../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#myCarousel').carousel({
+                interval: 500
+            })
+        });
+    </script>
+</body>
+
+</html>
